@@ -17,11 +17,27 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        /* Style for video container */
+        #video-container {
+            margin-top: 20px;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <h1>Current Time</h1>
     <div id="clock">Loading...</div>
+
+    <!-- Video Section -->
+    <div id="video-container">
+        <video width="640" height="360" controls autoplay>
+            <source src="IMG_2073.MOV" type="video/quicktime">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <script>
         function updateClock() {
