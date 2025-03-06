@@ -34,9 +34,15 @@
             transform: scale(1.3); /* Zoom in instantly */
         }
 
-        /* Video player customization */
-        iframe {
-            border: none;
+        /* Invisible overlay to block cursor interaction */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent; /* Fully invisible */
+            z-index: 2;
         }
     </style>
 </head>
@@ -45,7 +51,7 @@
     <h1>YouTube Video with Hover Effect</h1>
 
     <div class="video-container" id="video-container">
-        <!-- YouTube iframe will be inserted dynamically here -->
+        <div class="overlay"></div>  <!-- This blocks cursor interaction -->
     </div>
 
     <script>
