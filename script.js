@@ -1,6 +1,7 @@
 const FOLDER_ID = '1vvUspFZ4ai1EnULedBuq7BNu_-TBqwqt'; // Replace with your folder ID
-const CLIENT_ID = 'YOUR_CLIENT_ID'; // Replace with your client ID from Google Developer Console
-const API_KEY = 'YOUR_API_KEY'; // Replace with your API key from Google Developer Console
+const CLIENT_ID = '270845835208-o1h9h8rl54ar9f88bc5pthn3rorqoilg.apps.googleusercontent.com'; // Replace with your client ID from Google Developer Console
+
+const API_KEY = 'AIzaSyD_8usS9shEG069JA_WsWItNIpQ3fMzAIM'; // Replace with your API key from Google Developer Console    
 
 function initApi() {
     gapi.client.init({
