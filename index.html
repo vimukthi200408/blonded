@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video with Full Cursor Block</title>
+    <title>Multi YouTube Video Wall</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,69 +11,60 @@
             background-color: #222;
             color: white;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .video-container {
             position: relative;
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 10px;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             overflow: hidden;
-            pointer-events: none; /* Completely disables cursor interaction */
+            border-radius: 10px;
         }
 
-        iframe {
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 450px;
-            border: none;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-
-    <h1>YouTube Video with Full Cursor Block</h1>
-
-    <div class="video-container" id="video-container">
-        <!-- YouTube iframe will be inserted dynamically -->
+    <h1>YouTube Video Wall</h1>
+    <div class="video-grid">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/gCRiJX9diWE?autoplay=1&mute=1&start=51&loop=1&playlist=gCRiJX9diWE&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/05oIYdNqY4o?autoplay=1&mute=1&start=0&loop=1&playlist=05oIYdNqY4o&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/CGzFF4s9H50?autoplay=1&mute=1&start=0&loop=1&playlist=CGzFF4s9H50&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/9tBHsSD0GAk?autoplay=1&mute=1&start=5&loop=1&playlist=9tBHsSD0GAk&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/FPaTv98wUsE?autoplay=1&mute=1&start=0&loop=1&playlist=FPaTv98wUsE&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/Z52vVsMdBkc?autoplay=1&mute=1&start=0&loop=1&playlist=Z52vVsMdBkc&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/viGMZx2rMgg?autoplay=1&mute=1&start=0&loop=1&playlist=viGMZx2rMgg&controls=0&modestbranding=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
     </div>
-
-    <script>
-        function onYouTubePlayerAPIReady() {
-            player = new YT.Player('video-container', {
-                height: '450',
-                width: '100%',
-                videoId: 'gCRiJX9diWE',
-                playerVars: {
-                    'autoplay': 1,
-                    'mute': 1,
-                    'start': 170,
-                    'vq': 'hd1080',
-                    'modestbranding': 1,
-                    'controls': 0,
-                    'showinfo': 0,
-                    'rel': 0,
-                    'loop': 1,
-                    'playlist': 'gCRiJX9diWE',
-                },
-                events: {
-                    'onStateChange': onPlayerStateChange,
-                }
-            });
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.ENDED) {
-                player.seekTo(51, true);
-            }
-        }
-
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    </script>
-
 </body>
 </html>
