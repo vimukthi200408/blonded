@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video with Hover Effect</title>
+    <title>YouTube Video Hover Effect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,44 +16,41 @@
 
         .video-container {
             position: relative;
-            width: 80%;
+            width: 80%; /* Adjust the width */
             max-width: 800px;
-            margin: auto;
-            overflow: hidden; /* Crop the video */
-            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
         }
 
         iframe {
             width: 100%;
-            height: 450px;
-            border: none;
+            height: 450px; /* Adjust the height */
             transition: transform 0.3s ease-in-out;
         }
 
         .video-container:hover iframe {
-            transform: scale(1.2); /* Zoom in when hover */
+            transform: scale(1.1); /* Crop the top and bottom when hovered */
+        }
+
+        .video-container iframe {
+            border: none;
         }
     </style>
 </head>
 <body>
+
     <h1>YouTube Video with Hover Effect</h1>
 
     <div class="video-container">
-        <!-- Embed YouTube video -->
-        <iframe src="https://www.youtube.com/embed/gCRiJX9diWE?autoplay=1&start=51&modestbranding=1&rel=0&showinfo=0&controls=0"
-                allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe 
+            src="https://www.youtube.com/embed/gCRiJX9diWE?start=51&autoplay=1&vq=hd1080&modestbranding=1&controls=0&showinfo=0&rel=0"
+            frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 
     <script>
-        // Optional: Add more advanced zoom effect based on mouse position
-        const videoContainer = document.querySelector('.video-container');
-        videoContainer.addEventListener('mouseenter', () => {
-            videoContainer.style.transform = "scale(1.2)";
-        });
-
-        videoContainer.addEventListener('mouseleave', () => {
-            videoContainer.style.transform = "scale(1)";
-        });
+        // JavaScript (if needed, for any further customization)
     </script>
+
 </body>
 </html>
