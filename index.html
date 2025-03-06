@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Cropping on Hover</title>
+    <title>Video with Hover Effect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,119 +23,37 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        video {
+        iframe {
             width: 100%;
-            height: auto;
+            height: 450px;
+            border: none;
             transition: transform 0.3s ease-in-out;
         }
 
-        .video-container:hover video {
+        .video-container:hover iframe {
             transform: scale(1.2); /* Zoom in when hover */
         }
     </style>
 </head>
 <body>
-    <h1>Video with Hover Effect</h1>
+    <h1>YouTube Video with Hover Effect</h1>
 
     <div class="video-container">
-        <video autoplay muted loop>
-            <source src="IMG_2073.MOV" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- Embed YouTube video -->
+        <iframe src="https://www.youtube.com/embed/gCRiJX9diWE?autoplay=1&start=51&modestbranding=1&rel=0&showinfo=0&controls=0"
+                allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 
     <script>
-        // Optional: You can make the video even more interactive by scaling based on mouse position
+        // Optional: Add more advanced zoom effect based on mouse position
         const videoContainer = document.querySelector('.video-container');
         videoContainer.addEventListener('mouseenter', () => {
-            // Add a zoom effect when the cursor is near the video
             videoContainer.style.transform = "scale(1.2)";
         });
 
         videoContainer.addEventListener('mouseleave', () => {
-            // Reset the zoom effect when the cursor leaves
             videoContainer.style.transform = "scale(1)";
         });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Display</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #222;
-            color: white;
-        }
-        video {
-            width: 60%; /* Smaller video size */
-            height: auto;
-            border: 5px solid white;
-            margin-bottom: 30px; /* Space between videos */
-        }
-        #youtube-video-container {
-            position: relative;
-            width: 80%; /* Adjust size for YouTube video */
-            height: 450px;
-            margin-bottom: 30px;
-        }
-        #youtube-video {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        #overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
-            z-index: 10; /* Makes sure it covers the UI */
-            display: block;
-        }
-    </style>
-</head>
-<body>
-   
-
-    <!-- YouTube Video Embed with Player API -->
-    <h2>Watch this YouTube Video</h2>
-    <div id="youtube-video-container">
-        <div id="overlay"></div> <!-- Overlay to hide UI elements -->
-        <div id="youtube-video"></div> <!-- Placeholder for YouTube video -->
-    </div>
-
-    <!-- Load YouTube Player API -->
-    <script src="https://www.youtube.com/iframe_api"></script>
-
-    <script>
-        // This will be called once the YouTube API is ready
-        function onYouTubeIframeAPIReady() {
-            var player = new YT.Player('youtube-video', {
-                videoId: 'gCRiJX9diWE', // YouTube video ID
-                playerVars: {
-                    autoplay: 1,         // Auto-play the video
-                    controls: 0,         // Hide controls (play, pause, etc.)
-                    modestbranding: 1,   // Hide YouTube logo
-                    showinfo: 0,         // Hide title
-                    rel: 0,              // Don't show related videos at the end
-                    start: 51,           // Start from 51 seconds
-                    vq: 'hd1080',        // Set video quality to 1080p
-                },
-                events: {
-                    onReady: function(event) {
-                        event.target.playVideo(); // Start video as soon as player is ready
-                    }
-                }
-            });
-        }
     </script>
 </body>
 </html>
