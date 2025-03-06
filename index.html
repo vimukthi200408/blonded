@@ -59,7 +59,7 @@
                 playerVars: {
                     'autoplay': 1,
                     'mute': 1,
-                    'start': 250,
+                    'start': 170,
                     'vq': 'hd1080',
                     'modestbranding': 1,
                     'controls': 0,
@@ -78,7 +78,7 @@
         function onPlayerStateChange(event) {
             // If the video ends (state 0), seek back to 51 seconds
             if (event.data == YT.PlayerState.ENDED) {
-                player.seekTo(250, true); // Seek to 51 seconds immediately
+                player.seekTo(170, true); // Seek to 51 seconds immediately
             }
         }
 
