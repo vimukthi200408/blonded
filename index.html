@@ -26,10 +26,12 @@
         iframe {
             width: 100%;
             height: 450px; /* Adjust the height */
+            transition: transform 0.5s ease; /* Smooth transition for zooming out */
         }
 
         .video-container:hover iframe {
             transform: scale(1.3); /* Zoom in instantly */
+            transition: none; /* Instant zoom-in without transition */
         }
 
         .video-container iframe {
