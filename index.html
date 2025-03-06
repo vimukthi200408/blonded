@@ -45,32 +45,12 @@
 
     <div class="video-container">
         <iframe 
-            id="video-frame"
             src="https://www.youtube.com/embed/gCRiJX9diWE?start=51&autoplay=1&vq=hd1080&modestbranding=1&controls=0&showinfo=0&rel=0"
             frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
 
     <script>
-        window.onload = function() {
-            const videoFrame = document.getElementById('video-frame');
-            const videoContainer = document.querySelector('.video-container');
-
-            // Initially zoom the video in
-            videoFrame.style.transform = 'scale(1.3)';
-            videoFrame.style.transition = 'none'; // No transition for the initial zoom
-
-            // Disable interactions with the iframe for the initial 10 seconds
-            videoFrame.style.pointerEvents = 'none';
-
-            // After 10 seconds, go back to normal scale and allow hover effect and interactions
-            setTimeout(function() {
-                videoFrame.style.transform = 'scale(1)'; // Return to normal size
-                videoFrame.style.transition = 'transform 0.5s ease'; // Smooth transition back to normal
-
-                // Enable hover effect and interaction with the video after 10 seconds
-                videoFrame.style.pointerEvents = 'auto'; // Enable hover effect
-            }, 10000); // 10000ms = 10 seconds
-        };
+        // JavaScript (if needed, for any further customization)
     </script>
 
 </body>
