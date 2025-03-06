@@ -13,19 +13,29 @@
             color: white;
         }
         video {
-            width: 80%; /* Adjust the width as needed */
+            width: 60%; /* Smaller video size */
             height: auto;
             border: 5px solid white;
+            margin-bottom: 30px; /* Space between videos */
+        }
+        iframe {
+            width: 80%; /* Adjust size for YouTube video */
+            height: 450px;
+            border: none;
         }
     </style>
 </head>
 <body>
     <h1>My Video</h1>
 
-    <!-- Video Embed -->
+    <!-- Local Video Embed -->
     <video controls autoplay>
         <source src="IMG_2073.MOV" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    <!-- YouTube Video Embed -->
+    <h2>Watch this YouTube Video</h2>
+    <iframe src="https://www.youtube.com/embed/gCRiJX9diWE?start=51&vq=hd1080" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </body>
 </html>
