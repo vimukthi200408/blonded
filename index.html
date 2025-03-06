@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video with Hover Effect</title>
+    <title>YouTube Video with Hover Zoom Effect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,9 +29,9 @@
             transition: transform 0.5s ease; /* Smooth transition for zooming out */
         }
 
+        /* Zoom effect on hover */
         .video-container:hover iframe {
             transform: scale(1.3); /* Zoom in instantly */
-            transition: none; /* Instant zoom-in without transition */
         }
 
         .video-container iframe {
