@@ -18,20 +18,38 @@
             border: 5px solid white;
             margin-bottom: 30px; /* Space between videos */
         }
-        #youtube-video {
+        #youtube-video-container {
+            position: relative;
             width: 80%; /* Adjust size for YouTube video */
             height: 450px;
+            margin-bottom: 30px;
+        }
+        #youtube-video {
+            width: 100%;
+            height: 100%;
             border: none;
+        }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+            z-index: 10; /* Makes sure it covers the UI */
+            display: block;
         }
     </style>
 </head>
 <body>
-    <h1>My Video</h1>
-
    
+
     <!-- YouTube Video Embed with Player API -->
     <h2>Watch this YouTube Video</h2>
-    <div id="youtube-video"></div> <!-- Placeholder for YouTube video -->
+    <div id="youtube-video-container">
+        <div id="overlay"></div> <!-- Overlay to hide UI elements -->
+        <div id="youtube-video"></div> <!-- Placeholder for YouTube video -->
+    </div>
 
     <!-- Load YouTube Player API -->
     <script src="https://www.youtube.com/iframe_api"></script>
