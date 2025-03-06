@@ -3,6 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Cropping on Hover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #222;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden; /* Crop the video */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-container:hover video {
+            transform: scale(1.2); /* Zoom in when hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Video with Hover Effect</h1>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="IMG_2073.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Optional: You can make the video even more interactive by scaling based on mouse position
+        const videoContainer = document.querySelector('.video-container');
+        videoContainer.addEventListener('mouseenter', () => {
+            // Add a zoom effect when the cursor is near the video
+            videoContainer.style.transform = "scale(1.2)";
+        });
+
+        videoContainer.addEventListener('mouseleave', () => {
+            // Reset the zoom effect when the cursor leaves
+            videoContainer.style.transform = "scale(1)";
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Display</title>
     <style>
         body {
